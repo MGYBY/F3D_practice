@@ -1,0 +1,152 @@
+  Title 
+  This is a sample input file
+
+ &xput
+    remark='!! Remarks beginning with "!! " are automatically added and removed by FLOW-3D.',
+    remark='!! Do not begin any user added remarks with with "!! ". They will be removed',
+    twfin=50,
+    itb=1,
+    dtmin=1e-07,
+    ifvisc=1,
+    ielast=2,
+    imphtc=0,
+    ifdynconv=1,
+    gx=0.06522,
+    gz=-1.3045,
+    ipdis=1,
+    idpth=1,
+    istnr=1,
+    esprtdt=5,
+    iscpot=1,
+    delt=1e-05,
+    ibm=1,
+    iorder=3,
+    tedit(1)=0,
+    tpltd(1)=2,
+    thpltd(1)=0.05,
+    tapltd(1)=2,
+    tsprtd(1)=0.05,
+    tprtd(1)=0.05,
+ /
+
+ &limits
+ /
+
+ &props
+    units='si',
+    tunits='c',
+    munits='kg',
+    lunits='m',
+    timunits='s',
+    cunits='coul',
+    mu1=0.01088435,
+    rhof=1,
+    emod1=0.01088435,
+    relax1=1,
+    ipgauge=0,
+ /
+
+ &scalar
+ /
+
+ &CHM
+ /
+
+ &BCDATA
+    remark='!! Boundary condition X Min',
+    ibct(1)=6,
+    ubct(1, 1)=1,
+    ihpbct(1)=1,
+    flhtbct(1, 1)=1,
+    ihtbct(1)=0,
+
+    remark='!! Boundary condition X Max',
+    ibct(2)=3,
+    ihtbct(2)=0,
+
+    remark='!! Boundary condition Y Min',
+    ihtbct(3)=0,
+
+    remark='!! Boundary condition Y Max',
+    ihtbct(4)=0,
+
+    remark='!! Boundary condition Z Min',
+    ibct(5)=2,
+    ihtbct(5)=0,
+
+    remark='!! Boundary condition Z Max',
+    ibct(6)=5,
+    fbct(1, 6)=0,
+    ihtbct(6)=0,
+    ipoutbct(6)=1,
+ /
+
+ &MESH
+    MeshName='Mesh block 1',
+    size=0.5,
+
+    px(1)=-30,
+    px(2)=0,
+    px(3)=8,
+
+    py(1)=0,
+    nycell(1)=4,
+    py(2)=2.5,
+
+    pz(1)=0,
+    nzcell(1)=25,
+    sizez(1)=0.04,
+    pz(2)=1,
+    nzcell(2)=27,
+    sizez(2)=0.045,
+    pz(3)=4,
+ /
+
+ &obs
+ /
+
+ &fl
+    remark='!! Region Pointer common parameters',
+    ui=1,
+    flht=1,
+    iflinittyp=1,
+ /
+
+ &bf
+ /
+
+ &motn
+ /
+
+ &grafic
+    anmtyp(1)='dpth',
+    anmtyp(2)='elast',
+    anmtyp(3)='f',
+    anmtyp(4)='p',
+    anmtyp(5)='scrpot',
+    anmtyp(6)='stnr',
+    anmtyp(7)='vel',
+ /
+
+ &RENDERSPACE
+ /
+
+ &HEADER
+    project='unidirectional_flow',
+    version='double',
+    nprocs=0,
+ /
+
+ &parts
+ /
+
+ &DETAILS
+    f3d_product_name='FLOW-3D',
+    f3d_version_number='12.0.2',
+    created='2025 Dec 24 16:41',
+    modified='2025 Dec 24 17:49',
+ /
+    Documentation: general comments, background, expectations, etc.
+
+#start tables:
+#end start tables
