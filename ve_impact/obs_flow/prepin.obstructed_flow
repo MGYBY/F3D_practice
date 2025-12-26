@@ -1,0 +1,235 @@
+  Title 
+  This is a sample input file
+
+ &xput
+    remark='!! Remarks beginning with "!! " are automatically added and removed by FLOW-3D.',
+    remark='!! Do not begin any user added remarks with with "!! ". They will be removed',
+    twfin=65,
+    itb=1,
+    dtmin=1e-10,
+    ifvisc=1,
+    ielast=2,
+    imphtc=0,
+    ifdynconv=1,
+    ifrest=1,
+    resfile='../unidirectional_flow/flsgrf.unidirectional_flow',
+    trest=50,
+    gx=0.06522,
+    gz=-1.3045,
+    ipdis=1,
+    idpth=1,
+    istnr=1,
+    esprtdt=5,
+    iscpot=1,
+    delt=1e-05,
+    ibm=1,
+    iorder=3,
+    tedit(1)=0,
+    tpltd(1)=0.5,
+    thpltd(1)=0.02,
+    tapltd(1)=0.5,
+    tsprtd(1)=0.02,
+    tprtd(1)=0.02,
+ /
+
+ &limits
+ /
+
+ &props
+    units='si',
+    tunits='c',
+    munits='kg',
+    lunits='m',
+    timunits='s',
+    cunits='coul',
+    mu1=0.010884354,
+    rhof=1,
+    emod1=0.010884354,
+    relax1=1,
+    ipgauge=0,
+ /
+
+ &scalar
+ /
+
+ &CHM
+ /
+
+ &BCDATA
+    remark='!! Boundary condition X Min',
+    ibct(1)=6,
+    ubct(1, 1)=1,
+    ihpbct(1)=1,
+    flhtbct(1, 1)=1,
+    ihtbct(1)=0,
+
+    remark='!! Boundary condition X Max',
+    ibct(2)=3,
+    ihtbct(2)=0,
+
+    remark='!! Boundary condition Y Min',
+    ihtbct(3)=0,
+
+    remark='!! Boundary condition Y Max',
+    ihtbct(4)=0,
+
+    remark='!! Boundary condition Z Min',
+    ibct(5)=2,
+    ihtbct(5)=0,
+
+    remark='!! Boundary condition Z Max',
+    ibct(6)=5,
+    fbct(1, 6)=0,
+    ihtbct(6)=0,
+    ipoutbct(6)=1,
+ /
+
+ &MESH
+    MeshName='Mesh block 1',
+    size=0.5,
+
+    px(1)=-30,
+    px(2)=0,
+    px(3)=2.999,
+    nxcell(3)=1,
+    px(4)=4.001,
+    px(5)=8,
+
+    py(1)=0,
+    nycell(1)=4,
+    py(2)=2.5,
+
+    pz(1)=0,
+    nzcell(1)=25,
+    sizez(1)=0.04,
+    pz(2)=1,
+    nzcell(2)=27,
+    sizez(2)=0.045,
+    pz(3)=4,
+ /
+
+ &BCDATA
+    remark='!! Boundary condition X Min',
+    ibct(1)=7,
+    ihtbct(1)=0,
+
+    remark='!! Boundary condition X Max',
+    ibct(2)=7,
+    ihtbct(2)=0,
+
+    remark='!! Boundary condition Y Min',
+    ihtbct(3)=0,
+
+    remark='!! Boundary condition Y Max',
+    ibct(4)=7,
+    ihtbct(4)=0,
+
+    remark='!! Boundary condition Z Min',
+    ibct(5)=2,
+    ihtbct(5)=0,
+
+    remark='!! Boundary condition Z Max',
+    ibct(6)=5,
+    fbct(1, 6)=0,
+    ihtbct(6)=0,
+    ipoutbct(6)=1,
+ /
+
+ &MESH
+    MeshName='Mesh block 2',
+    size=0.25,
+
+    px(1)=0,
+    nxcell(1)=51,
+    px(2)=2.8,
+    nxcell(2)=32,
+    px(3)=4.2,
+    nxcell(3)=25,
+    px(4)=6,
+    nxcell(4)=17,
+    sizex(4)=0.08,
+    px(5)=8,
+
+    py(1)=0,
+    nycell(1)=50,
+    sizey(1)=0.02,
+    py(2)=2.5,
+    sizey(2)=0.1,
+
+    pz(1)=0,
+    nzcell(1)=24,
+    sizez(1)=0.03333,
+    pz(2)=1,
+    nzcell(2)=42,
+    sizez(2)=0.0491215,
+    pz(3)=4,
+    sizez(3)=0.1,
+ /
+
+ &obs
+    nobs=1,
+
+    remark='!! Component 1',
+    obsid(1)='obs_cir',
+
+    remark='!! Subcomponent 1',
+    iob(1)=1,
+    subcmpid(1)='obs',
+    rah(1)=0.5,
+    zl(1)=0,
+    zh(1)=4,
+    trnx(1)=3.5,
+    if_sub_pin(1)=0,
+
+    remark='!! Component 1 properties',
+    ifrco(1)=1,
+    ilthobs(1)=0,
+    prefmbw(1)=1.013e+05,
+ /
+
+ &fl
+    remark='!! Region Pointer common parameters',
+    ui=1,
+    flht=1,
+    iflinittyp=1,
+ /
+
+ &bf
+ /
+
+ &motn
+ /
+
+ &grafic
+    anmtyp(1)='dpth',
+    anmtyp(2)='elast',
+    anmtyp(3)='f',
+    anmtyp(4)='p',
+    anmtyp(5)='scrpot',
+    anmtyp(6)='stnr',
+    anmtyp(7)='vel',
+ /
+
+ &RENDERSPACE
+    iff3d(1)=1,
+ /
+
+ &HEADER
+    project='obstructed_flow',
+    version='double',
+    nprocs=0,
+ /
+
+ &parts
+ /
+
+ &DETAILS
+    f3d_product_name='FLOW-3D',
+    f3d_version_number='12.0.2',
+    created='2025 Dec 25 18:39',
+    modified='2025 Dec 25 20:18',
+ /
+    Documentation: general comments, background, expectations, etc.
+
+#start tables:
+#end start tables
