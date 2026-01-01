@@ -1,0 +1,473 @@
+  Title 
+  This is a sample input file
+
+ &xput
+    remark='!! Remarks beginning with "!! " are automatically added and removed by FLOW-3D.',
+    remark='!! Do not begin any user added remarks with with "!! ". They will be removed',
+    application=2,
+    process=1,
+    subprocess=0,
+    twfin=1800,
+    itb=1,
+    dtmin=1e-07,
+    teditdt(1)=0.0,
+    ifvisc=1,
+    ifvis=-1,
+    imphtc=0,
+    ifdynconv=1,
+    ifrho=1,
+    gx=0.000981,
+    gz=-9.81,
+    iwsh_swat=1,
+    tabvnam(1)='NVD',
+    tabvnam(2)='T',
+    tabvnam(3)='STNR',
+    tabvnam(4)='RHO',
+    tabvnam(5)='P',
+    tabvnam(6)='TLSS',
+    ipdis=1,
+    idpth=1,
+    delt=0.0001,
+    ibm=1,
+    iorder=2,
+    iscour=1,
+    tedit(1)=0,
+    tpltd(1)=5,
+    thpltd(1)=0.1,
+    tapltd(1)=5,
+    tsprtd(1)=0.1,
+    tprtd(1)=0.1,
+    event_condition_logic_fin='',
+    nglobals=0,
+ /
+
+ &limits
+    eps=0.0001,
+    vfclean=0.01,
+ /
+
+ &props
+    units='si',
+    tunits='k',
+    munits='kg',
+    lunits='m',
+    timunits='s',
+    cunits='coul',
+    pcav=0,
+    mu1=0.001,
+    cangle=-90,
+    pgasmp=0,
+    fluid1='Water at 20 C',
+    muctst=0.001,
+    mutmp2=273.15,
+    cv1=4182,
+    tl1=273.25,
+    ts1=273.15,
+    clht1=3.35e+05,
+    cvs1=2100,
+    thcs1=2.215,
+    rhofs=917,
+    tsdrg=1,
+    fscr=1,
+    fsco=0,
+    rhof=1000,
+    sigma=0.073,
+    yieldt1=0,
+    mus=0,
+    thc1=0.597,
+    yield1=-1,
+    ipgauge=1,
+    p_reference=101300,
+    t_reference=0,
+    imu1dt(1)=1,
+    imu1dt(2)=1,
+    isigmadt(1)=1,
+    isigmadt(2)=1,
+    irhofdt(1)=1,
+    irhofdt(2)=1,
+    iemod1dt(1)=1,
+    iemod1dt(2)=1,
+    iyield1dt(1)=1,
+    iyield1dt(2)=1,
+    imoblty1dt(1)=1,
+    imoblty1dt(2)=1,
+    irelax1dt(1)=1,
+    irelax1dt(2)=1,
+    iclhv1dt(1)=1,
+    iclhv1dt(2)=1,
+    iecond1dt(1)=1,
+    iecond1dt(2)=1,
+    iecondsc2dt(1)=1,
+    iecondsc2dt(2)=1,
+    imu2dt(1)=1,
+    imu2dt(2)=1,
+    iemod2dt(1)=1,
+    iemod2dt(2)=1,
+    iyield2dt(1)=1,
+    iyield2dt(2)=1,
+    imoblty2dt(1)=1,
+    imoblty2dt(2)=1,
+    irelax2dt(1)=1,
+    irelax2dt(2)=1,
+    iecond2dt(1)=1,
+    iecond2dt(2)=1,
+    mules=0.1,
+ /
+
+ &scalar
+    nsspc=1,
+
+    remark='!! Sediment 1',
+    ssname(1)='sand',
+    ssdia(1)=0.000385,
+    rhfss(1)=2650,
+    sscrt(1)=0.01,
+    ssentrf(1)=0.018,
+    ssbdlf2(1)=8,
+    ssbdlf3(1)=8,
+    ssang(1)=32,
+    nsc=0,
+    issslp=1,
+    scrfcr=0.64,
+    crough=2.5,
+    ibedload=2,
+    ssrzmlt=1,
+    cmscr=0,
+    rmscr=1.43,
+ /
+
+ &CHM
+ /
+
+ &BCDATA
+    remark='!! Boundary condition X Min',
+    ibct(1)=6,
+    ubct(1, 1)=0.25,
+    ihpbct(1)=1,
+    flhtbct(1, 1)=0.28,
+    tkebct(1, 1)=0.01,
+    dtkbct(1, 1)=0.001,
+    ihtbct(1)=0,
+
+    remark='!! Boundary condition X Max',
+    ibct(2)=5,
+    ihpbct(2)=1,
+    flhtbct(1, 2)=0.28,
+    ihtbct(2)=0,
+    ipoutbct(2)=1,
+
+    remark='!! Boundary condition Y Min',
+    ihtbct(3)=0,
+
+    remark='!! Boundary condition Y Max',
+    ihtbct(4)=0,
+
+    remark='!! Boundary condition Z Min',
+    ibct(5)=2,
+    ihtbct(5)=0,
+
+    remark='!! Boundary condition Z Max',
+    ibct(6)=5,
+    fbct(1, 6)=0,
+    ihtbct(6)=0,
+
+    remark='!! Boundary condition common parameters',
+    if_part=0,
+    timbct(1)=0,
+ /
+
+ &MESH
+    MeshName='Mesh block 1',
+    ntotal=1000,
+    size=0.0038,
+
+    px(1)=0,
+    nxcell(1)=8,
+    sizex(1)=0.0065,
+    px(2)=0.0508,
+    sizex(2)=0.004,
+    px(3)=0.19,
+    nxcell(3)=19,
+    sizex(3)=0.0025,
+    px(4)=0.262,
+    sizex(4)=0.0025,
+    px(5)=0.33302,
+    sizex(5)=0.00475,
+    px(6)=0.508,
+    sizex(6)=0.015,
+
+    py(1)=0,
+    sizey(1)=0.003,
+    py(2)=0.029,
+    sizey(2)=0.00325,
+    py(3)=0.1175,
+    sizey(3)=0.004,
+    py(4)=0.155,
+    sizey(4)=0.01,
+
+    pz(1)=0,
+    sizez(1)=0.01,
+    pz(2)=0.08,
+    nzcell(2)=20,
+    sizez(2)=0.0025,
+    pz(3)=0.13,
+    sizez(3)=0.0025,
+    pz(4)=0.16,
+    sizez(4)=0.004,
+    pz(5)=0.225,
+    sizez(5)=0.008,
+    pz(6)=0.3,
+    sizez(6)=0.01,
+    pz(7)=0.35,
+    sizez(7)=0.015,
+ /
+
+ &BCDATA_MPI
+    remark='!! Boundary condition X Min',
+    ibct(1)=6,
+    ubct(1, 1)=0.25,
+    ihpbct(1)=1,
+    flhtbct(1, 1)=0.28,
+    tkebct(1, 1)=0.01,
+    dtkbct(1, 1)=0.001,
+    ihtbct(1)=0,
+
+    remark='!! Boundary condition X Max',
+    ibct(2)=5,
+    ihpbct(2)=1,
+    flhtbct(1, 2)=0.28,
+    ihtbct(2)=0,
+    ipoutbct(2)=1,
+
+    remark='!! Boundary condition Y Min',
+    ihtbct(3)=0,
+
+    remark='!! Boundary condition Y Max',
+    ihtbct(4)=0,
+
+    remark='!! Boundary condition Z Min',
+    ibct(5)=2,
+    ihtbct(5)=0,
+
+    remark='!! Boundary condition Z Max',
+    ibct(6)=5,
+    fbct(1, 6)=0,
+    ihtbct(6)=0,
+
+    remark='!! Boundary condition common parameters',
+    if_part=0,
+    timbct(1)=0,
+ /
+
+ &MESH_MPI
+    MeshName='Mesh block 1 - MPI domain 1',
+    ntotal=1000,
+    size=0.0038,
+
+    px(1)=0,
+    nxcell(1)=8,
+    sizex(1)=0.0065,
+    px(2)=0.0508,
+    sizex(2)=0.004,
+    px(3)=0.19,
+    nxcell(3)=19,
+    sizex(3)=0.0025,
+    px(4)=0.262,
+    sizex(4)=0.0025,
+    px(5)=0.33302,
+    sizex(5)=0.00475,
+    px(6)=0.508,
+    sizex(6)=0.015,
+
+    py(1)=0,
+    sizey(1)=0.003,
+    py(2)=0.029,
+    sizey(2)=0.00325,
+    py(3)=0.1175,
+    sizey(3)=0.004,
+    py(4)=0.155,
+    sizey(4)=0.01,
+
+    pz(1)=0,
+    sizez(1)=0.01,
+    pz(2)=0.08,
+    nzcell(2)=20,
+    sizez(2)=0.0025,
+    pz(3)=0.13,
+    sizez(3)=0.0025,
+    pz(4)=0.16,
+    sizez(4)=0.004,
+    pz(5)=0.225,
+    sizez(5)=0.008,
+    pz(6)=0.3,
+    sizez(6)=0.01,
+    pz(7)=0.35,
+    sizez(7)=0.015,
+ /
+
+ &obs
+    nobs=3,
+
+    remark='!! Component 1',
+    obsid(1)='pier',
+
+    remark='!! Subcomponent 1',
+    iob(1)=1,
+    subcmpid(1)='Pier',
+    rah(1)=0.0254,
+    roughsub(1)=0.002,
+    svfsub(1, 1)=1,
+    zl(1)=0,
+    zh(1)=0.35,
+    trnx(1)=0.2296,
+
+    remark='!! Component 1 properties',
+    ihtobs(1)=-1,
+    ifrco(1)=1,
+    ilthobs(1)=0,
+    ipref(1)=2,
+
+    remark='!! ComponentSqueezePinProbeEvent 1',
+    event_condition_logic_sqp(1)='',
+    nevents_phan(1)=0,
+
+    remark='!! Component 2',
+    obsid(2)='fixed-bed-up',
+
+    remark='!! Subcomponent 2',
+    iob(2)=2,
+    subcmpid(2)='fixed-bed-up',
+    roughsub(2)=0.001,
+    svfsub(2, 1)=1,
+    xl(2)=0,
+    xh(2)=0.0508,
+    yl(2)=0,
+    yh(2)=0.171,
+    zl(2)=0,
+    zh(2)=0.13,
+
+    remark='!! Component 2 properties',
+    ilthobs(2)=0,
+
+    remark='!! ComponentSqueezePinProbeEvent 2',
+    event_condition_logic_sqp(2)='',
+    nevents_phan(2)=0,
+
+    remark='!! Component 3',
+    ifob(3)=3,
+    obsid(3)='sed',
+
+    remark='!! Subcomponent 3',
+    iob(3)=3,
+    subcmpid(3)='sed',
+    svfsub(3, 1)=1,
+    xl(3)=0.0508,
+    xh(3)=0.508,
+    yl(3)=0,
+    yh(3)=0.171,
+    zl(3)=0,
+    zh(3)=0.13,
+
+    remark='!! Component 3 properties',
+    ilthobs(3)=0,
+
+    remark='!! ComponentSqueezePinProbeEvent 3',
+    event_condition_logic_sqp(3)='',
+    nevents_phan(3)=0,
+
+    remark='!! Component common parameters',
+    avrck=3.1,
+    tolerance_gap=0,
+    tolerance_skin=0,
+
+    remark='!! SpringsAndRopesList',
+    nsprp=0,
+ /
+
+ &fl
+    nfls=0,
+
+    remark='!! DropletSourceList',
+    ndrop=0,
+
+    remark='!! Droplet Sources common parameters',
+    ui=0.25,
+    tkei=0.01,
+    flht=0.28,
+    sssi(1)=0.0,
+    iflinittyp=1,
+ /
+
+ &bf
+    nbafs=0,
+ /
+
+ &motn
+ /
+
+ &grafic
+    anmtyp(1)='f',
+    anmtyp(2)='p',
+    anmtyp(3)='scour',
+    anmtyp(4)='vel',
+ /
+
+ &RENDERSPACE
+    iff3d(1)=1,
+    iff3d(2)=1,
+    iff3d(3)=1,
+ /
+
+ &HEADER
+    project='Mele_CIR-roughLESReal2ndOrder_JH-setup_sym_mod-mesh_2025R1',
+    version='double',
+    nprocs=0,
+    run_with_available=0,
+ /
+
+ &parts
+    remark='!! MassMomentumSourceList',
+    nvnts=0,
+
+    remark='!! Gas Particle Class',
+    pgas_title='Gas particles',
+    ipgas_species=0,
+
+    remark='!! Fluid Particle Class',
+    pliquid_title='Fluid particles',
+    ipliquid_species=0,
+
+    remark='!! Mass Particle Class',
+    pmass_title='Mass particles',
+    ipmass_species=0,
+
+    remark='!! Marker Particle Class',
+    pmarker_title='Marker particles',
+    nsc_part=0,
+
+    remark='!! Particle Blocks',
+    npxyz=0,
+
+    remark='!! Particle Sources',
+    ippkt=0,
+ /
+
+ &MPIVAR
+    idyntb=0,
+    impi_mesh=0,
+ /
+
+ &DETAILS
+    f3d_product_name='FLOW-3D HYDRO',
+    f3d_version_number='25.1.0',
+    created='2025 Dec 23 16:01',
+    modified='2025 Dec 23 16:01',
+ /
+    Documentation: general comments, background, expectations, etc.
+
+ #start BlocksDistribution
+0	1	20
+ #end BlocksDistribution
+
+#start tables:
+#end start tables
